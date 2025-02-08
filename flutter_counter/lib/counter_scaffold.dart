@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:rflutter_alert/rflutter_alert.dart';
 class Scaff extends StatefulWidget {
   const Scaff({super.key});
   @override
@@ -9,6 +9,14 @@ class Scaff extends StatefulWidget {
 class _Scaff extends State<Scaff> {
   List<Color> col = [Color(0xff000000), Color(0xff434343)];
   int count = 0;
+  void alert(context)
+  {
+    Alert(
+      context: context,
+      title: " Oops! ",
+      desc: " Counter Cannot Go Below 0! ",
+    ).show();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +52,13 @@ class _Scaff extends State<Scaff> {
                     IconButton(
                     onPressed: () {
                       setState(() {
+                        if(count >= 1)
+                        {
                         count = count - 1;
+                        }
+                        else{
+                          alert(context);
+                        }
                       });
                     },
                     icon: Icon(Icons.arrow_downward,color: Colors.red,size: 50)),
@@ -64,3 +78,4 @@ class _Scaff extends State<Scaff> {
     );
   }
 }
+
