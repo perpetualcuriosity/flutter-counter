@@ -7,7 +7,7 @@ class Scaff extends StatefulWidget {
 }
 
 class _Scaff extends State<Scaff> {
-  List<Color> col = [Color(0xff200122), Color(0xff6f0000)];
+  List<Color> col = [Color(0xff000000), Color(0xff434343)];
   int count = 0;
   @override
   Widget build(BuildContext context) {
@@ -40,21 +40,21 @@ class _Scaff extends State<Scaff> {
                         count = count + 1;
                       });
                     },
-                    icon: Icon(Icons.arrow_upward)),
+                    icon: Icon(Icons.arrow_upward,color: Colors.green,size: 50)),
                     IconButton(
                     onPressed: () {
                       setState(() {
                         count = count - 1;
                       });
                     },
-                    icon: Icon(Icons.arrow_downward)),
+                    icon: Icon(Icons.arrow_downward,color: Colors.red,size: 50)),
                     IconButton(
                     onPressed: () {
                       setState(() {
                         count = 0;
                       });
                     },
-                    icon: Icon(Icons.restore),
+                    icon: Icon(Icons.restore,color: Colors.white,size: 50),
                     )
               ]
             )
